@@ -15,6 +15,15 @@ Component({
     methods: {
         labeltap: function() {
             console.log('label被点击了一下！')
+        },
+        tpage: function(e) {
+            let id = e.currentTarget.dataset.id;
+            console.log(e.currentTarget)
+            let url;
+            url = '/pages/content/content?id='+ id;
+            wx.navigateTo({
+              url: url
+            })
         }
     }
 })

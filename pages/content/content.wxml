@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="home-search-wrap">
+        <input class="home-search-input" placeholder="搜索你喜欢的" />
+    </view>
+    <view class="home-nav">
+        <view wx:for="{{classlists}}" wx:key="unique" class="home-nav-item {{item.classid == classSelected ? 'active':''}}" data-id="{{item.classid}}" bindtap="tapid" >{{item.classname}}</view>
+    </view>
+    <view class="content">
+        <view class="content-user">
+			<image src="{{detail.userpic}}" class="c-user-head"></image>
+			<text class="c-user-name">{{detail.username}}</text>
+			<text class="c-user-newstime">分享于{{detail.newstime}}</text>
+		</view>
+        <view>
+            <text class="c-cont-main">
+                {{detail.appraise}}
+            </text>
+            <view wx:for="{{detail.imgs}}" wx:key="unique">
+                <image src="{{item}}" style="width:100%" mode="widthFix"></image>
+            </view>
+        </view>
+
+        <view>
+            <view class="relation-tags">
+    		    <view class="c-rela-tag" wx:for="{{detail.tags}}" wx:key="unique" data-tagid="{{item.tagid}}">{{item.tagname}}</view>
+           </view>
+        </view>
+    </view>
+
+    <view class="footer">
+    	<view><text>粘人网</text></view>
+    	<view>
+            <text>Copyright © 2016 <text>www.nr99.com</text>
+    	   </text>
+        </view>
+    </view>
+</view>

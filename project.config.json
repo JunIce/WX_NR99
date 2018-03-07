@@ -27,7 +27,15 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": 0,
+					"name": "page",
+					"pathName": "pages/content/content",
+					"query": "id=8439",
+					"scene": "1001"
+				}
+			]
 		}
 	}
 }

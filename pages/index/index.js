@@ -4,18 +4,13 @@ const app = getApp()
 
 Page({
     data: {
-        classlists: [{classid:0, classname: '首页'}],
+        classlists: [],
         classSelected: 0,
         infoList: []
     },
     onLoad: function () {
-        wx.request({
-            url: 'http://api.woyaogexing.com:8024/v3/home/classlists/',
-            success: (res) => {
-                this.setData({
-                    classlists: this.data.classlists.concat(res.data)
-                })
-            }
+        this.setData({
+            classlists: app.globalData.classlists
         })
 
         wx.request({
@@ -35,10 +30,13 @@ Page({
         wx.showToast({
             title: id.toString(),
         })
+        this.getClassData(id)
     },
     getClassData: function(classid) {
+        var url;
+        url = 'http://api.woyaogexing.com:8024/v3/home/classinfo/?page_size=12&page=1&classid='+classid,
         wx.request({
-            url: 'http://api.woyaogexing.com:8024/v3/home/newinfolist/?page_size=12&page=1',
+            url: url,
             success: (res) => {
                 this.setData({
                     infoList: res.data
