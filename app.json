@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "粘人网",
+    "navigationBarBackgroundColor": "#ec5252",
+    "navigationBarTextStyle":"white",
+     "backgroundColor": "#f1f1f1"
+  }
+}

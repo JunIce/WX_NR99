@@ -1,0 +1,44 @@
+/* components/custom-checkbox.wxss */
+.list-item {
+    display: flex;
+    flex-direction: row;
+    padding: 30rpx 20rpx;
+    border-bottom: 1rpx solid #f6f6f6;
+}
+.list-item-detail{
+    margin-left: 20rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.list-item-title {
+    font-size: .7rem;
+    color: #444;
+    display:block;
+}
+.list-item-info-detail{
+    display: flex;
+    justify-content: space-between;
+    color: #bbb;
+    font-size: .6rem;
+    margin-bottom: 10rpx;
+}
+.list-item-userpic{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 40rpx;
+}
+
+.list-item-user,.list-item-love{
+    display: flex;
+    align-items: center;
+}
+
+.list-item-favaico{
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.f-mr-l2{
+    margin-left: 10rpx
+}

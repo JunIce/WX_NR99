@@ -1,0 +1,20 @@
+<view class="list-item">
+    <view>
+        <image mode="widthFix" style="width:250rpx;display:block;" src="{{info.titlepic}}" ></image>
+    </view>
+    <view class="list-item-detail">
+        <view><text class="list-item-title">{{info.title}}</text></view>
+        <view class="list-item-info-detail">
+            <view class="list-item-user">
+                <image src="{{info.titlepic}}" class="list-item-userpic" mode="widthFix"></image>
+                <text class="f-mr-l2">{{info.username}}</text>
+                <text class="f-mr-l2">|</text>
+                <text class="f-mr-l2">{{info.newstime}}</text>
+            </view>
+            <view class="list-item-love">
+                <view class="list-item-favaico" style="background: url('/assets/love.png') no-repeat;background-size:contain;"></view>
+                <text class="f-mr-l2">{{info.likenum}}</text>
+            </view>
+        </view>
+    </view>
+</view>
