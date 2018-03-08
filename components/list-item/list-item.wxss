@@ -1,28 +1,33 @@
 /* components/custom-checkbox.wxss */
 .list-item {
-    display: flex;
-    flex-direction: row;
-    padding: 30rpx 20rpx;
-    border-bottom: 1rpx solid #f6f6f6;
+    border-radius: 7rpx;
+    box-shadow: 2rpx 6rpx 10rpx #ddd;
 }
 .list-item-detail{
-    margin-left: 20rpx;
+    padding:20rpx;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow:1;
 }
+
 .list-item-title {
-    font-size: .7rem;
+    font-size: 24rpx;
     color: #444;
     display:block;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
 }
 .list-item-info-detail{
     display: flex;
     justify-content: space-between;
     color: #bbb;
     font-size: .6rem;
-    margin-bottom: 10rpx;
+    margin-top: 20rpx;
 }
 .list-item-userpic{
     width: 40rpx;

@@ -9,12 +9,12 @@ Page({
         infoList: []
     },
     onLoad: function () {
+
         this.setData({
             classlists: app.globalData.classlists
         })
-
         wx.request({
-            url: 'http://api.woyaogexing.com:8024/v3/home/newinfolist/?page_size=12&page=1',
+            url: 'https://api.alafrase.com/v3/home/newinfolist/?page_size=12&page=1',
             success: (res) => {
                 this.setData({
                     infoList: res.data

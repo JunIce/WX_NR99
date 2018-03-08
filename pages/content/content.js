@@ -16,7 +16,7 @@ Page({
         })
 
         wx.request({
-            url:'http://api.woyaogexing.com:8024/v3/home/infodetail',
+            url:'https://api.alafrase.com/v3/home/infodetail',
             data: options,
             success: (res) => {
                 this.setData({
