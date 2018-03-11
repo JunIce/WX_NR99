@@ -1,5 +1,5 @@
 <view class="list-item" >
-    <view bindtap="tpage" data-id="{{info.id}}">
+    <view bindtap="tpage" data-id="{{info.id}}" data-ttid="{{info.ttid}}">
         <image mode="widthFix" style="width:100%;display:block;" src="{{info.titlepic}}" >
         </image>
     </view>

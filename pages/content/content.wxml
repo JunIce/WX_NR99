@@ -1,11 +1,14 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="home-search-wrap">
-        <input class="home-search-input" placeholder="搜索你喜欢的" />
-    </view>
-    <view class="home-nav">
-        <view wx:for="{{classlists}}" wx:key="unique" class="home-nav-item {{item.classid == classSelected ? 'active':''}}" data-id="{{item.classid}}" bindtap="tapid" >{{item.classname}}</view>
-    </view>
+    <swiper class="swiper">
+      <block wx:for="{{detail.imgs}}" wx:key="unique">
+        <swiper-item class="slide-item">
+            <view class="slide-item-box">
+                <image src="{{item}}" mode="center" class="slide-image"/>
+            </view>
+        </swiper-item>
+      </block>
+    </swiper>
     <view class="content">
         <view class="content-user">
 			<image src="{{detail.userpic}}" class="c-user-head"></image>
@@ -16,9 +19,6 @@
             <text class="c-cont-main">
                 {{detail.appraise}}
             </text>
-            <view wx:for="{{detail.imgs}}" wx:key="unique">
-                <image src="{{item}}" style="width:100%" mode="widthFix"></image>
-            </view>
         </view>
 
         <view>
@@ -28,11 +28,19 @@
         </view>
     </view>
 
-    <view class="footer">
-    	<view><text>粘人网</text></view>
-    	<view>
-            <text>Copyright © 2016 <text>www.nr99.com</text>
-    	   </text>
+    <view class="c-tuijian">
+        <view class="c-tj-icon"></view>
+        <text class="c-tj-title">相关推荐</text>
+    </view>
+    <view class="list-main">
+        <list-item wx:for="{{relaInfos}}" wx:key="{{item.id}}" info="{{item}}" class="li-item"></list-item>
+    </view>
+    <view class="footer"></view>
+    <view class="c-bt-panel">
+        <view class="c-bt-wrap">
+            <view class="b-bt-btn"> 点赞 · {{detail.favanum}}</view>
+            <view class="b-bt-btn"> 评论 · {{detail.favanum}}</view>
+            <view class="b-bt-btn"> 收藏 · {{detail.likenum}}</view>
         </view>
     </view>
 </view>

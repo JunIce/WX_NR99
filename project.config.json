@@ -32,7 +32,7 @@
 					"id": 0,
 					"name": "page",
 					"pathName": "pages/content/content",
-					"query": "id=8439",
+					"query": "id=8439&ttid=40",
 					"scene": "1001"
 				}
 			]

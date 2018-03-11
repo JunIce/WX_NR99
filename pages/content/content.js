@@ -7,12 +7,17 @@ const util = require('../../utils/util.js');
 Page({
     data: {
         classlists: [],
-        detail: {}
+        detail: {},
+        imgHeight: '',
+        imgWidth: '',
+        imgHeightsArray: [],
+        current: 0,
+        relaInfos: []
     },
     onLoad: function (options) {
 
         this.setData({
-            classlists: app.globalData.classlists
+            imgWidth: wx.getSystemInfoSync().windowWidth
         })
 
         wx.request({
@@ -24,18 +29,33 @@ Page({
                 })
             }
         })
+
+        wx.request({
+            url:'https://api.alafrase.com/v3/home/get-by-info-type/',
+            data: options,
+            success: (res) => {
+                this.setData({
+                    relaInfos: res.data
+                })
+            }
+        })
     },
     dataParse: function(obj) {
         //set titile
 
         wx.setNavigationBarTitle({
-            title: obj.title
+            title: obj.title.substr(0,10)
         })
 
         // parse imgs
         var b = obj.comm_imgs.split('###');
-        b.splice(0,1)
-        obj.imgs = b;
+        var imgs = [];
+        b.map(i => {
+            if(i == '') return;
+            i = i.replace(/_300x260/, '_600x600');
+            imgs.push(i)
+        })
+        obj.imgs = imgs;
 
         // parse html
         obj.appraise = util.convertHtmlToText(obj.appraise);

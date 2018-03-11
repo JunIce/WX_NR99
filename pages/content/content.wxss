@@ -36,7 +36,7 @@
 
 .content{
     background: #fff;
-    padding: 20rpx;
+    padding: 20rpx 20rpx 140rpx 20rpx;
 }
 .content-user{
     font-size: .7rem;
@@ -67,6 +67,9 @@
     vertical-align: baseline;
 }
 
+.relation-tags{
+    margin-top: 50rpx;
+}
 .c-rela-tag{
     display: inline-block;
     padding: 8px 3%;
@@ -77,9 +80,71 @@
     color: #444;
     font-size: .7em;
 }
+
+.swiper{
+    height: 860rpx;
+    background-color: #f9f9f9;
+}
+.slide-image{
+    width: 600rpx;
+    height: 800rpx;
+    display: block;
+}
+.slide-item{
+    padding:30rpx;
+    box-sizing: border-box;
+}
+.slide-item-box{
+    width: 600rpx;
+    margin: auto;
+    box-shadow: 2rpx 4rpx 14rpx #ccc;
+}
+
+
+.c-bt-panel{
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+}
+.c-bt-wrap{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    font-size: 28rpx;
+    color: #444;
+    box-shadow: 0 -4rpx 10rpx #f2f2f2;
+}
+.c-tuijian{
+    padding: 10rpx 14rpx;
+    font-size: 32rpx;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+.c-tj-icon{
+    width: 4rpx;
+    height: 32rpx;
+    background-color: #ec5252;
+}
+.c-tj-title{
+    margin-left: 12rpx;
+}
+
 .footer{
-    text-align: center;
-    padding: 2% 0;
-    font-size: .7rem;
-    background-color: #f6f6f6;
+    height: 120rpx;
+}
+.b-bt-btn{
+    padding: 24rpx 0;
+}
+.list-main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10rpx;
+}
+.li-item{
+    box-sizing: border-box;
+    width: 50%;
+    padding: 10rpx;
 }
