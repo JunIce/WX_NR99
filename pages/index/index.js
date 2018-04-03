@@ -1,23 +1,43 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const api = require('../../utils/api.js')
 
 Page({
     data: {
         classlists: [],
         classSelected: 0,
-        infoList: []
+        infoList: [],
+        page: 1,
     },
     onLoad: function () {
-
-        this.setData({
-            classlists: app.globalData.classlists
-        })
+        try {
+            var data = wx.getStorageSync('classlists')
+            if (data) {
+                this.setData({
+                    classlists: data
+                })
+            }
+        } catch (e) {
+            wx.request({
+                url: api.ClassLists,
+                success: (res) => {
+                    this.setData({
+                        classlists: res.data
+                    })
+                }
+            })
+        }
+        
         wx.request({
-            url: 'https://api.alafrase.com/v3/home/newinfolist/?page_size=12&page=1',
+            url: api.NewInfoList,
+            data:{
+                page_size: 12,
+                page: 1
+            },
             success: (res) => {
                 this.setData({
-                    infoList: res.data
+                    infoList: this.data.infoList.concat(res.data)
                 })
             }
         })
@@ -25,23 +45,52 @@ Page({
     tapid: function(e) {
         let id = e.target.dataset.id;
         this.setData({
-            classSelected: id
+            classSelected: id,
+            page: 1,
+            infoList: []
         })
-        wx.showToast({
-            title: id.toString(),
+
+        this.loadingData()
+    },
+    loadingData(){
+        let classid = this.data.classSelected
+        wx.showLoading({
+            title: '努力加载中......',
+            success: () =>{
+                this.getClassData(classid)
+            }
         })
-        this.getClassData(id)
     },
     getClassData: function(classid) {
-        var url;
-        url = 'http://api.woyaogexing.com:8024/v3/home/classinfo/?page_size=12&page=1&classid='+classid,
+        let url = classid == 0 ? api.NewInfoList : api.ClassListInfo
+        let page = this.data.page
         wx.request({
             url: url,
+            data: {
+                page_size: 12,
+                page: page,
+                classid: classid
+            },
             success: (res) => {
+                wx.hideLoading()
                 this.setData({
-                    infoList: res.data
+                    infoList: this.data.infoList.concat(res.data)
+                })
+            },
+            fail: () => {
+                wx.hideLoading()
+                wx.showToast({
+                    title: '网络错误',
+                    duration: 2000
                 })
             }
         })
+    },
+    scrollDown(){
+        let page = this.data.page
+        this.setData({
+            page: ++page
+        })
+        this.loadingData()
     }
 })

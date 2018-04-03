@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
-	"appid": "wx3a5f924ac2be305f",
-	"projectname": "wygx",
+	"appid": "",
+	"projectname": "nr99",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -21,12 +21,16 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,

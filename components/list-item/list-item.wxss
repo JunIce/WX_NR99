@@ -43,6 +43,8 @@
 .list-item-favaico{
     width: 30rpx;
     height: 30rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABzklEQVRYR+2WzVHCQBTH39sDyU1KMBdm9yRUYOwAKxAr0A7EChwqECrQDsQO4LQZLqGEeCMceM6bSZwYN7sJBLmwp0z2Zd9v/+8rCCdeeGL/cAY4K2BVII7jbpqmdwAwBIA+ACwQcd7pdCZBECTFBGbb7Xb7QERhbgsA757nzcq2xe8qAVarVX+3270BwKWhUtZCiNter7fgPYdtIoS4yW3LZxkBsgM/AKBrKdOEiAa+7ydpmsYu2yoII0AURXyzqxo9Yp7ZsOyutZBSDpwKaK1DROTbt76I6F4pNbXmgNZ6ioiceK0vIpoppUYugDkiXrfuHQCI6FMp9Stcf3JAa300AABYSim5nH/WvwLUVWCEiK9HCsGzUmpsVSDrfmsAuGgbgogCpRSfXR0C3tFajxHxqWWAiZTy0dkHcoMGzagO59LzvNA0EypnQYuh+BJChI1mQX6lbCZwu903H5ZCiFGVc/bj/CE5AKJSdmcSloOaQXAPrzOg+PNazmspkMNkOcHhsEJws/F9f2j7CWmsQBFis9m8V80K07BxlYgzB0wHmCbmPs4bhaAMEkURN5UXfm+a866b5/t7KVAsU362lZkL5CAA1+F19s8AJ1fgG1co0yE2UWnmAAAAAElFTkSuQmCC) no-repeat;
+    background-size: contain;
 }
 
 .f-mr-l2{

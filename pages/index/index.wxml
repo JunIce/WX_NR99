@@ -1,12 +1,18 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="home-search-wrap">
-        <input class="home-search-input" placeholder="搜索你喜欢的" />
-    </view>
-    <view class="home-nav">
-        <view wx:for="{{classlists}}" wx:key="unique" class="home-nav-item {{item.classid == classSelected ? 'active':''}}" data-id="{{item.classid}}" bindtap="tapid" >{{item.classname}}</view>
-    </view>
-    <view class="list-main">
-        <list-item wx:for="{{infoList}}" wx:key="{{item.id}}" info="{{item}}" class="li-item"></list-item>
-    </view>
+    <scroll-view
+    class="scroll-container"
+    scroll-y 
+    bindscrolltolower = "scrollDown"
+    >
+        <view class="home-search-wrap">
+            <input class="home-search-input" placeholder="搜索你喜欢的" />
+        </view>
+        <scroll-view scroll-x class="home-nav">
+            <view wx:for="{{classlists}}" wx:key="unique" class="home-nav-item {{item.classid == classSelected ? 'active':''}}" data-id="{{item.classid}}" bindtap="tapid" >{{item.classname}}</view>
+        </scroll-view>
+        <view class="list-main">
+            <list-item wx:for="{{infoList}}" wx:key="{{item.id}}" info="{{item}}" class="li-item"></list-item>
+        </view>
+    </scroll-view>  
 </view>

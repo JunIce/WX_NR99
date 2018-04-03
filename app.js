@@ -1,10 +1,15 @@
 //app.js
+
+const api = require('./utils/api.js')
 App({
-    onShow: function () {
+    onLaunch: function () {
         wx.request({
-            url: 'https://api.alafrase.com/v3/home/classlists/',
+            url: api.ClassLists,
             success: (res) => {
-                this.globalData.classlists = this.globalData.classlists.concat(res.data)
+                wx.setStorage({
+                    key: 'classlists',
+                    data: this.globalData.classlists.concat(res.data)
+                })
             }
         })
     },

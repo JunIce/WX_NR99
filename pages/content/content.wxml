@@ -1,26 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-    <swiper class="swiper">
+    <swiper id="swiper" class="swiper">
       <block wx:for="{{detail.imgs}}" wx:key="unique">
         <swiper-item class="slide-item">
-            <view class="slide-item-box">
+            <view class="slide-item-box" bindtap="mytap">
                 <image src="{{item}}" mode="center" class="slide-image"/>
             </view>
         </swiper-item>
       </block>
     </swiper>
+    <view class="zan" style="top: {{top}}px; left: {{left}}px;" animation="{{animationData}}"></view>
     <view class="content">
         <view class="content-user">
 			<image src="{{detail.userpic}}" class="c-user-head"></image>
 			<text class="c-user-name">{{detail.username}}</text>
-			<text class="c-user-newstime">分享于{{detail.newstime}}</text>
 		</view>
         <view>
             <text class="c-cont-main">
                 {{detail.appraise}}
             </text>
         </view>
-
         <view>
             <view class="relation-tags">
     		    <view class="c-rela-tag" wx:for="{{detail.tags}}" wx:key="unique" data-tagid="{{item.tagid}}">{{item.tagname}}</view>
@@ -38,9 +37,9 @@
     <view class="footer"></view>
     <view class="c-bt-panel">
         <view class="c-bt-wrap">
-            <view class="b-bt-btn"> 点赞 · {{detail.favanum}}</view>
+            <view class="b-bt-btn {{contfava ? 'active': ''}}" bindtap="contFava" data-id="{{detail.id}}"> 点赞 · {{likenum}}</view>
             <view class="b-bt-btn"> 评论 · {{detail.favanum}}</view>
-            <view class="b-bt-btn"> 收藏 · {{detail.likenum}}</view>
+            <view class="b-bt-btn"> 收藏 · {{favanum}}</view>
         </view>
     </view>
 </view>

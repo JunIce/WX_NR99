@@ -11,7 +11,7 @@
                 <text class="f-mr-l2">{{info.username}}</text>
             </view>
             <view class="list-item-love">
-                <view class="list-item-favaico" style="background: url('/assets/love.png') no-repeat;background-size:contain;"></view>
+                <view class="list-item-favaico"></view>
                 <text class="f-mr-l2">{{info.likenum}}</text>
             </view>
         </view>
