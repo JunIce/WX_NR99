@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+    <scroll-view
+    class="scroll-container"
+    scroll-y 
+    bindscrolltolower = "scrollDown"
+    >
+        <view class='tagTitle' >
+            <view class='tagIco'></view>
+            <text>{{tagname}}</text>
+        </view>
+        <view class="list-main">
+            <list-item wx:for="{{infoList}}" wx:key="{{item.id}}" info="{{item}}" class="li-item"></list-item>
+        </view>
+    </scroll-view>  
+</view>

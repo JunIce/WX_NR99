@@ -30,13 +30,20 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
 					"name": "page",
 					"pathName": "pages/content/content",
 					"query": "id=8439&ttid=40",
+					"scene": "1001"
+				},
+				{
+					"id": 1,
+					"name": "tag",
+					"pathName": "pages/tag/tag",
+					"query": "tagid=381&tagname=女鞋",
 					"scene": "1001"
 				}
 			]

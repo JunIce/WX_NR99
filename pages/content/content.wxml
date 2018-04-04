@@ -22,7 +22,7 @@
         </view>
         <view>
             <view class="relation-tags">
-    		    <view class="c-rela-tag" wx:for="{{detail.tags}}" wx:key="unique" data-tagid="{{item.tagid}}">{{item.tagname}}</view>
+    		    <view class="c-rela-tag" wx:for="{{detail.tags}}" wx:key="unique" data-tagid="{{item.tagid}}" data-tagname="{{item.tagname}}" bindtap="tagurl">{{item.tagname}}</view>
            </view>
         </view>
     </view>

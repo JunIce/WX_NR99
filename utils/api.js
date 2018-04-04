@@ -6,5 +6,6 @@ module.exports = {
     ClassListInfo: apiUrl + '/classinfo/',
     InfoDetail: apiUrl + '/infodetail/',
     InfoTags: apiUrl + '/get-by-info-type/',
-    DoFava: apiUrl + '/fava/'
+    DoFava: apiUrl + '/fava/',
+    TagsList: apiUrl + '/taglist/'
 }

@@ -96,7 +96,7 @@ Page({
             contfava: true,
             likenum: num
         })
-
+        this.sayGood()
         wx.setStorageSync(id, true)
 
         wx.request({
@@ -122,7 +122,6 @@ Page({
                     duration: 1000
                 })
             }else{
-                self.sayGood()
                 self.increaseFavanum()
             }    
         }
@@ -146,6 +145,13 @@ Page({
               animationData:animation.export()
             })
         }, 1000)
+    },
+    tagurl(e){
+        let tagid = e.target.dataset.tagid
+        let tagname = e.target.dataset.tagname
+        wx.navigateTo({
+            url: '/pages/tag/tag?tagid='+ tagid + '&tagname=' + tagname 
+        })
     },
     dataParse: function(obj) {
         //set titile
